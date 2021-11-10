@@ -1,0 +1,216 @@
+:root {
+  --mdc-theme-primary: #0095ee;
+  --mdc-theme-secondary: #fcb457;
+  /* Dark mode first 
+  --text-color: #c0c1c3;
+  --background-color: #36393f;
+  --background-hover: #727a86; */
+  --text-color: #151515;
+  --background-color: #e7ecf4; /*#b7bdc8;*/
+  --background-hover: #969fac;
+  --border-color: #717274;
+}
+body {
+  background-color: white;
+}
+input {
+  margin: 5px;
+}
+button {
+  margin: 5px;
+}
+
+.output_csv {
+  font-size: 3vh;
+  font-family: monospace;
+}
+
+#files {
+  background-color: var(--mdc-theme-secondary);
+}
+
+/* #svg {
+  border: rgba(0, 0, 0, 0.66);
+} */
+
+#canvas {
+  border: solid rgba(0, 0, 0, 0.66) 1px;
+  box-shadow: 2px 2px 4px 0px rgba(0, 0, 0, 0.66);
+  stroke-width: 2px;
+}
+
+#canvas line {
+  stroke-width: 3px;
+  stroke-linecap: round;
+  stroke-miterlimit: 1;
+}
+
+/* NEEDS UPDATE IN SIDE_MENU FOR EXPORT PARITY */
+#canvas text {
+  user-select: none;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-size: small;
+  text-anchor: middle;
+}
+
+.main-text {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  color: var(--text-color, white);
+}
+
+.text-for-controls {
+  /* position: absolute; */
+  display: inline-block;
+  border: thin solid var(--border-color, #717274);
+  border-radius: 3px;
+  padding: 5px 0px;
+  background-color: var(--background-color, #36393f);
+  height: auto;
+  box-shadow: 2px 2px 10px 0px rgba(0, 0, 0, 0.66);
+}
+
+.text-for-controls * {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  user-select: none;
+  position: relative;
+  padding: 5px;
+  margin: 5px;
+  color: var(--text-color, #c0c1c3);
+}
+
+#panel {
+  display: none;
+  position: absolute;
+  border: thin solid var(--border-color, #717274);
+  background-color: var(--background-color, #36393f);
+  color: var(--text-color, #c0c1c3);
+  border-radius: 5px;
+  width: 400px;
+  left: 400px;
+  box-shadow: 2px 2px 10px 0px rgba(0, 0, 0, 0.66);
+}
+
+#panel #panel_drag {
+  position: absolute;
+  /* user-select: none; */
+  cursor: grab;
+  top: 25%;
+  right: 0px;
+}
+
+#panel #panel_drag:active {
+  cursor: grabbing;
+}
+
+#render_slider {
+  width: 70%;
+}
+
+#sideMenu {
+  /* position: absolute; */
+  display: inline-block;
+  border: thin solid var(--border-color, #717274);
+  border-radius: 3px;
+  padding: 5px 0px;
+  background-color: var(--background-color, #36393f);
+  height: auto;
+  box-shadow: 2px 2px 10px 0px rgba(0, 0, 0, 0.66);
+}
+
+#sideMenu .contextElement {
+  padding: 5px 15px;
+}
+
+.sideMenuText {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  position: relative;
+  width: 100%;
+  margin: 0px;
+  text-align: center;
+  color: var(--text-color, #c0c1c3);
+}
+
+#contextMenu {
+  display: none;
+  position: absolute;
+  border-radius: 3px;
+  border: thin solid var(--border-color, #717274);
+  padding: 5px 0px;
+  /* margin-right: 5px; */
+  background-color: var(--background-color, #36393f);
+  height: auto;
+  box-shadow: 2px 2px 10px 0px rgba(0, 0, 0, 0.66);
+}
+
+.contextElement {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  user-select: none;
+  position: relative;
+  padding: 5px;
+  margin: 0px;
+  /* border-radius: 3px; */
+  color: var(--text-color, #c0c1c3);
+  background-color: var(--background-color, #36393f) /*#40444b*/;
+  /* border: 1px solid #191a1d; */
+}
+
+#sideMenu .contextElement:hover {
+  background-color: var(--background-hover, #727a86);
+}
+
+#contextMenu .contextElement:hover {
+  background-color: var(--background-hover, #727a86);
+}
+
+.contextElement_spacer {
+  user-select: none;
+  position: relative;
+  padding: 0.5px;
+  margin: 2px 5px;
+  background-color: var(--background-hover, #969fac);
+}
+
+.contextElement_input {
+  position: absolute;
+  display: inline-block;
+  top: 0px;
+  right: 15px;
+  margin: 0px;
+  padding: 1px;
+  box-sizing: border-box;
+  width: 66px;
+  height: 90%;
+}
+
+.contextElement_lever_on {
+  position: absolute;
+  display: inline-block;
+  right: 15px;
+  margin: 1px 1px 1px 1px;
+  border-radius: 10px;
+  color: #c0c1c3;
+  background-color: #48793c;
+  text-align: right;
+  font-size: 90%;
+  width: 30px;
+}
+
+.contextElement_lever_off {
+  position: absolute;
+  display: inline-block;
+  right: 15px;
+  margin: 1px 1px 1px 1px;
+  border-radius: 10px;
+  color: #c0c1c3;
+  background-color: #774a4a;
+  text-align: left;
+  font-size: 90%;
+  width: 30px;
+}
+
+* {
+  overflow-x: hidden;
+}
+
+
+/*# sourceMappingURL=style.4c93aee1.css.map */
